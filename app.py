@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, jsonify
 from openai import OpenAI
 
 app = Flask(__name__)
-client = OpenAI(api_key="YOUR_API_KEY")  # 🔹 Replace YOUR_API_KEY with your OpenAI key
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # 🔹 Replace YOUR_API_KEY with your OpenAI key
 
 @app.route("/")
 def home():
